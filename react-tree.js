@@ -67,24 +67,8 @@ this["ReactTree"] =
 
 	  getDefaultProps: function() {
 	    return {
-	      columns: [{
-	        label: 'Boopin',
-	        attribute: 'boop',
-	        headerCell: HeaderCell,
-	        cell: BodyCell,
-	      }, {
-	        label: 'Wootin',
-	        attribute: 'woot',
-	        headerCell: HeaderCell,
-	        cell: BodyCell,
-	      }],
-	      collection: [{
-	        boop: 'beep',
-	        woot: 'woot',
-	      }, {
-	        boop: 'beeeep',
-	        woot: 'woooooot',
-	      }],
+	      columns: [],
+	      collection: [],
 	    };
 	  },
 

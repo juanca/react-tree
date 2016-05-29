@@ -8,7 +8,27 @@
 <body>
   <div id='example'></div>
   <script type='text/javascript'>
-    ReactDOM.render(React.createElement(ReactTree.Grid, null), document.getElementById('example'));
+    var columns =  [{
+      label: 'Boopin',
+      attribute: 'boop',
+      headerCell: HeaderCell,
+      cell: BodyCell,
+    }, {
+      label: 'Wootin',
+      attribute: 'woot',
+      headerCell: HeaderCell,
+      cell: BodyCell,
+    }];
+
+    var collection = [{
+      boop: 'beep',
+      woot: 'woot',
+    }, {
+      boop: 'beeeep',
+      woot: 'woooooot',
+    }];
+
+    ReactDOM.render(React.createElement(ReactTree.Grid, { collection: collection, columns: columns }), document.getElementById('example'));
   </script>
 </body>
 </html>
