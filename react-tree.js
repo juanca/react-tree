@@ -68,15 +68,23 @@ this["ReactTree"] =
 	  getDefaultProps: function() {
 	    return {
 	      columns: [{
-	        label: 'Some Header Cell',
+	        label: 'Boopin',
+	        attribute: 'boop',
 	        headerCell: HeaderCell,
 	        cell: BodyCell,
 	      }, {
-	        label: 'Another Header Cell',
+	        label: 'Wootin',
+	        attribute: 'woot',
 	        headerCell: HeaderCell,
 	        cell: BodyCell,
 	      }],
-	      collection: [{}, {}],
+	      collection: [{
+	        boop: 'beep',
+	        woot: 'woot',
+	      }, {
+	        boop: 'beeeep',
+	        woot: 'woooooot',
+	      }],
 	    };
 	  },
 
@@ -239,7 +247,8 @@ this["ReactTree"] =
 	          flexGrow: 1,
 	          flexShrink: 0,
 	        },
-	      }
+	      },
+	      this.props.model[this.props.column.attribute]
 	    );
 	  },
 	});
