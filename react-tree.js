@@ -66,7 +66,10 @@ this["ReactTree"] =
 	  getDefaultProps: function() {
 	    return {
 	      columns: [{
-	        label: 'Header Cell',
+	        label: 'Some Header Cell',
+	        headerCell: HeaderCell,
+	      }, {
+	        label: 'Another Header Cell',
 	        headerCell: HeaderCell,
 	      }],
 	      collection: [],
@@ -112,7 +115,10 @@ this["ReactTree"] =
 
 	  render: function() {
 	    return React.DOM.div({
-	        className: 'react-tree-header-row'
+	        className: 'react-tree-header-row',
+	        style: {
+	          display: 'flex',
+	        },
 	      },
 	      this.props.columns.map(this.createHeaderCell)
 	    );
@@ -133,7 +139,12 @@ this["ReactTree"] =
 
 	  render: function() {
 	    return React.DOM.div({
-	        className: 'react-tree-header-cell'
+	        className: 'react-tree-header-cell',
+	        style: {
+	          flexGrow: 1,
+	          flexShrink: 0,
+	          textAlign: 'center',
+	        },
 	      },
 	      this.props.column.label
 	    );
