@@ -56,6 +56,7 @@ this["ReactTree"] =
 
 	/* WEBPACK VAR INJECTION */(function(React) {HeaderRow = __webpack_require__(3);
 	HeaderCell = __webpack_require__(4);
+	Body = __webpack_require__(5);
 
 	module.exports = React.createClass({
 	  propTypes: {
@@ -72,7 +73,7 @@ this["ReactTree"] =
 	        label: 'Another Header Cell',
 	        headerCell: HeaderCell,
 	      }],
-	      collection: [],
+	      collection: [{}, {}],
 	    };
 	  },
 
@@ -83,6 +84,10 @@ this["ReactTree"] =
 	      React.createElement(HeaderRow, {
 	        columns: this.props.columns,
 	        collection: this.props.collection,
+	      }),
+	      React.createElement(Body, {
+	        collection: this.props.collection,
+	        columns: this.props.columns,
 	      })
 	    );
 	  },
@@ -147,6 +152,56 @@ this["ReactTree"] =
 	        },
 	      },
 	      this.props.column.label
+	    );
+	  },
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {BodyRow = __webpack_require__(6);
+
+	module.exports = React.createClass({
+	  propTypes: {
+	    collection: React.PropTypes.array,
+	    columns: React.PropTypes.array,
+	  },
+
+	  createBodyRow: function(model) {
+	    return React.createElement(BodyRow, {
+	      columns: this.props.columns,
+	      model: model,
+	    });
+	  },
+
+	  render: function() {
+	    return React.DOM.div({
+	        className: 'react-tree-body',
+	      },
+	      this.props.collection.map(this.createBodyRow)
+	    );
+	  },
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
+	  propTypes: {
+	    columns: React.PropTypes.array,
+	    model: React.PropTypes.object,
+	  },
+
+	  render: function() {
+	    return React.DOM.div({
+	        className: 'react-tree-body-row',
+	      }
 	    );
 	  },
 	});
