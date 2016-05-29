@@ -222,7 +222,7 @@ this["ReactTree"] =
 	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
 	  propTypes: {
 	    column: React.PropTypes.object,
-	    model: React.PropTypes.model,
+	    model: React.PropTypes.object,
 	  },
 
 	  render: function() {
