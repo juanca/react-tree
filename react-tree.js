@@ -57,7 +57,7 @@ this["ReactTree"] =
 	/* WEBPACK VAR INJECTION */(function(React) {HeaderRow = __webpack_require__(3);
 	HeaderCell = __webpack_require__(4);
 	Body = __webpack_require__(5);
-	BodyCell = __webpack_require__(7);
+	BodyCell = __webpack_require__(8);
 
 	module.exports = React.createClass({
 	  propTypes: {
@@ -160,7 +160,7 @@ this["ReactTree"] =
 
 	/* WEBPACK VAR INJECTION */(function(React) {BodyRow = __webpack_require__(6);
 
-	module.exports = React.createClass({
+	module.exports = Body = React.createClass({
 	  propTypes: {
 	    collection: React.PropTypes.array,
 	    columns: React.PropTypes.array,
@@ -168,6 +168,7 @@ this["ReactTree"] =
 
 	  createBodyRow: function(model) {
 	    return React.createElement(BodyRow, {
+	      Body: Body,
 	      columns: this.props.columns,
 	      model: model,
 	    });
@@ -188,6 +189,45 @@ this["ReactTree"] =
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(React) {BodyRowCells = __webpack_require__(7);
+
+	module.exports = React.createClass({
+	  propTypes: {
+	    Body: React.PropTypes.element,
+	    columns: React.PropTypes.array,
+	    model: React.PropTypes.object,
+	  },
+
+	  createBodyRowCells: function() {
+	    return React.createElement(BodyRowCells, {
+	      columns: columns,
+	      model: this.props.model,
+	    });
+	  },
+
+	  createBody: function() {
+	    return React.createElement(this.props.Body, {
+	      collection: [],
+	      columns: columns,
+	    });
+	  },
+
+	  render: function() {
+	    return React.DOM.div({
+	        className: 'react-tree-body-row',
+	      },
+	      this.createBodyRowCells(),
+	      this.createBody()
+	    );
+	  },
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
 	  propTypes: {
 	    columns: React.PropTypes.array,
@@ -203,7 +243,7 @@ this["ReactTree"] =
 
 	  render: function() {
 	    return React.DOM.div({
-	        className: 'react-tree-body-row',
+	        className: 'react-tree-body-row-cells',
 	        style: {
 	          display: 'flex',
 	        },
@@ -216,7 +256,7 @@ this["ReactTree"] =
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
