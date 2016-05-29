@@ -225,6 +225,10 @@ this["ReactTree"] =
 	    model: React.PropTypes.object,
 	  },
 
+	  getModelAttribute: function() {
+	    return this.props.model[this.props.column.attribute];
+	  },
+
 	  render: function() {
 	    return React.DOM.div({
 	        className: 'react-tree-body-cell',
@@ -234,7 +238,7 @@ this["ReactTree"] =
 	          flexShrink: 0,
 	        },
 	      },
-	      this.props.model[this.props.column.attribute]
+	      this.getModelAttribute()
 	    );
 	  },
 	});
