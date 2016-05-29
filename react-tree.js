@@ -57,6 +57,7 @@ this["ReactTree"] =
 	/* WEBPACK VAR INJECTION */(function(React) {HeaderRow = __webpack_require__(3);
 	HeaderCell = __webpack_require__(4);
 	Body = __webpack_require__(5);
+	BodyCell = __webpack_require__(7);
 
 	module.exports = React.createClass({
 	  propTypes: {
@@ -69,9 +70,11 @@ this["ReactTree"] =
 	      columns: [{
 	        label: 'Some Header Cell',
 	        headerCell: HeaderCell,
+	        cell: BodyCell,
 	      }, {
 	        label: 'Another Header Cell',
 	        headerCell: HeaderCell,
+	        cell: BodyCell,
 	      }],
 	      collection: [{}, {}],
 	    };
@@ -198,9 +201,44 @@ this["ReactTree"] =
 	    model: React.PropTypes.object,
 	  },
 
+	  createBodyCell: function(column) {
+	    return React.createElement(column.cell, {
+	      column: column,
+	      model: this.props.model,
+	    });
+	  },
+
 	  render: function() {
 	    return React.DOM.div({
 	        className: 'react-tree-body-row',
+	        style: {
+	          display: 'flex',
+	        },
+	      },
+	      this.props.columns.map(this.createBodyCell)
+	    );
+	  },
+	});
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
+	  propTypes: {
+	    column: React.PropTypes.object,
+	    model: React.PropTypes.model,
+	  },
+
+	  render: function() {
+	    return React.DOM.div({
+	        className: 'react-tree-body-cell',
+	        style: {
+	          flexGrow: 1,
+	          flexShrink: 0,
+	        },
 	      }
 	    );
 	  },
