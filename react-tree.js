@@ -55,6 +55,7 @@ this["ReactTree"] =
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(React) {HeaderRow = __webpack_require__(3);
+	HeaderCell = __webpack_require__(4);
 
 	module.exports = React.createClass({
 	  propTypes: {
@@ -64,7 +65,10 @@ this["ReactTree"] =
 
 	  getDefaultProps: function() {
 	    return {
-	      columns: [],
+	      columns: [{
+	        label: 'Header Cell',
+	        headerCell: HeaderCell,
+	      }],
 	      collection: [],
 	    };
 	  },
@@ -93,16 +97,14 @@ this["ReactTree"] =
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React) {HeaderCell = __webpack_require__(4);
-
-	module.exports = React.createClass({
+	/* WEBPACK VAR INJECTION */(function(React) {module.exports = React.createClass({
 	  propTypes: {
 	    columns: React.PropTypes.array,
 	    collection: React.PropTypes.array,
 	  },
 
 	  createHeaderCell: function(column) {
-	    return React.createElement(HeaderCell, {
+	    return React.createElement(column.headerCell, {
 	      column: column,
 	      collection: this.props.collection,
 	    });
@@ -132,7 +134,8 @@ this["ReactTree"] =
 	  render: function() {
 	    return React.DOM.div({
 	        className: 'react-tree-header-cell'
-	      }
+	      },
+	      this.props.column.label
 	    );
 	  },
 	});
