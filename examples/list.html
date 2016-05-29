@@ -3,10 +3,12 @@
   <title>React Tree: List example</title>
   <script type='text/javascript' src='../node_modules/react/dist/react.js'></script>
   <script type='text/javascript' src='../node_modules/react-dom/dist/react-dom.js'></script>
+  <script type='text/javascript' src='../react-tree.js'></script>
 </head>
 <body>
   <div id='example'></div>
   <script type='text/javascript'>
+    ReactDOM.render(React.createElement(ReactTree.Grid, null), document.getElementById('example'));
   </script>
 </body>
 </html>
