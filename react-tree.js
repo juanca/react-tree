@@ -72,18 +72,26 @@ this["ReactTree"] =
 	    };
 	  },
 
+	  createHeaderRow: function() {
+	    return React.createElement(HeaderRow, {
+	      columns: this.props.columns,
+	      collection: this.props.collection,
+	    });
+	  },
+
+	  createBody: function() {
+	    return React.createElement(Body, {
+	      collection: this.props.collection,
+	      columns: this.props.columns,
+	    });
+	  },
+
 	  render: function() {
 	    return React.DOM.div({
 	        className: 'react-tree-grid'
 	      },
-	      React.createElement(HeaderRow, {
-	        columns: this.props.columns,
-	        collection: this.props.collection,
-	      }),
-	      React.createElement(Body, {
-	        collection: this.props.collection,
-	        columns: this.props.columns,
-	      })
+	      this.createHeaderRow(),
+	      this.createBody()
 	    );
 	  },
 	});
