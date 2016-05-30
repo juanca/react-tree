@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>React Tree: Recursive list example</title>
+  <script type='text/javascript' src='../node_modules/react/dist/react.js'></script>
+  <script type='text/javascript' src='../node_modules/react-dom/dist/react-dom.js'></script>
+  <script type='text/javascript' src='../react-tree.js'></script>
+</head>
+<body>
+  <div id='example'></div>
+  <script type='text/javascript'>
+    var columns =  [{
+      label: 'Boopin',
+      attribute: 'boop',
+      headerCell: HeaderCell,
+      cell: BodyCell,
+    }, {
+      label: 'Wootin',
+      attribute: 'woot',
+      headerCell: HeaderCell,
+      cell: BodyCell,
+    }];
+
+    var collection = [{
+      boop: 'beep',
+      woot: 'woot',
+      collection: [{
+        boop: 'blat',
+        woot: 'bleat',
+      }, {
+      }
+      ]
+    }, {
+      boop: 'beeeep',
+      woot: 'woooooot',
+    }];
+
+    ReactDOM.render(React.createElement(ReactTree.Grid, { collection: collection, columns: columns }), document.getElementById('example'));
+  </script>
+</body>
+</html>
