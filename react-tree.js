@@ -215,9 +215,13 @@ this["ReactTree"] =
 
 	  createBody: function() {
 	    return React.createElement(this.props.Body, {
-	      collection: [],
+	      collection: this.getBodyCollection(),
 	      columns: columns,
 	    });
+	  },
+
+	  getBodyCollection: function() {
+	    return this.props.model.collection || [];
 	  },
 
 	  render: function() {
