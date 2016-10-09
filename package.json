@@ -6,8 +6,9 @@
   "scripts": {
     "compile": "webpack",
     "start": "webpack-dev-server",
-    "test": "karma start",
-    "test:ci": "npm test -- --single-run"
+    "test": "npm run test:karma -- --single-run",
+    "test:karma": "karma start",
+    "test:watch": "npm run test:karma"
   },
   "repository": {
     "type": "git",
