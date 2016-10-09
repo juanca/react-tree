@@ -13,9 +13,13 @@ and [Marionette Tree](https://github.com/juanca/marionette-tree).
 
     npm run compile
 
-### Developing locally (with webpack-dev-server)
+### Developing locally
 
     npm start
+
+### Testing locally
+
+    npm test
 
 ## API
 
