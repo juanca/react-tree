@@ -1,5 +1,7 @@
 module.exports = function(config) {
   config.set({
+    browsers: ['PhantomJS'],
+
     files: [
       'spec/hello-world.js',
     ],
