@@ -29,11 +29,14 @@
     "react-dom": "^15.1.0"
   },
   "devDependencies": {
+    "enzyme": "^2.4.1",
     "jasmine-core": "^2.5.2",
+    "jasmine-enzyme": "^1.2.0",
     "karma": "^1.3.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-webpack": "^1.8.0",
+    "react-addons-test-utils": "^15.3.2",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.16.2"
   }
