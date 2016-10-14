@@ -11,13 +11,13 @@
     var columns =  [{
       label: 'Boopin',
       attribute: 'boop',
-      headerCell: HeaderCell,
-      cell: BodyCell,
+      headerCell: ReactTree.HeaderCell,
+      cell: ReactTree.BodyCell,
     }, {
       label: 'Wootin',
       attribute: 'woot',
-      headerCell: HeaderCell,
-      cell: BodyCell,
+      headerCell: ReactTree.HeaderCell,
+      cell: ReactTree.BodyCell,
     }];
 
     var collection = [{
@@ -28,7 +28,10 @@
       woot: 'woooooot',
     }];
 
-    ReactDOM.render(React.createElement(ReactTree.Grid, { collection: collection, columns: columns }), document.getElementById('example'));
+    ReactDOM.render(React.createElement(ReactTree.Grid, {
+      collection: collection,
+      columns: columns
+    }), document.getElementById('example'));
   </script>
 </body>
 </html>
