@@ -27,5 +27,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       'React': 'react'
     }),
-  ]
+  ],
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
 };

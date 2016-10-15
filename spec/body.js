@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
-
-const Body = require('../lib/body');
-const BodyRow = require('../lib/body-row');
+import Body from '../lib/body';
+import BodyRow from '../lib/body-row';
 
 describe('<Body />', () => {
   beforeEach(() => {

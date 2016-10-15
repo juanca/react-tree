@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import jasmineEnzyme from 'jasmine-enzyme';
-
-const HeaderRow = require('../lib/header-row');
-const HeaderCell = require('../lib/header-cell');
+import HeaderRow from '../lib/header-row';
+import HeaderCell from '../lib/header-cell';
 
 describe('<HeaderRow />', () => {
   beforeEach(() => {
