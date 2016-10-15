@@ -1,0 +1,49 @@
+<html>
+<head>
+  <title>React Tree: Nested list example</title>
+  <script type='text/javascript' src='../node_modules/react/dist/react.js'></script>
+  <script type='text/javascript' src='../node_modules/react-dom/dist/react-dom.js'></script>
+  <script type='text/javascript' src='../react-tree.js'></script>
+</head>
+<body>
+  <div id='example'></div>
+  <script type='text/javascript'>
+    var projectColumns =  [{
+      label: 'Project',
+      attribute: 'title',
+      headerCell: ReactTree.HeaderCell,
+      cell: ReactTree.BodyCell,
+    }, {
+      label: 'Tasks',
+      attribute: 'task_count',
+      headerCell: ReactTree.HeaderCell,
+      cell: ReactTree.BodyCell,
+    }];
+
+    var userColumns =  [{
+      attribute: 'full_name',
+      cell: ReactTree.BodyCell,
+    }, {
+      label: 'Tasks',
+      attribute: 'task_count',
+      cell: ReactTree.BodyCell,
+    }];
+
+    var projects = [{
+      title: 'Drink Coffee',
+      task_count: 42,
+    }, {
+      title: 'Sleep',
+      task_count: 1337,
+    }, {
+      title: 'Overwatch',
+      task_count: 76,
+    }];
+
+    ReactDOM.render(React.createElement(ReactTree.Grid, {
+      collection: projects,
+      columns: projectColumns
+    }), document.getElementById('example'));
+  </script>
+</body>
+</html>
