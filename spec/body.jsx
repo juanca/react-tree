@@ -31,7 +31,7 @@ describe('<Body />', () => {
     const wrapper = shallow(<Body
       collection={[
         { id: 1, name: 'Hello world!' },
-        { id: 2, name: 'Hola mundo!' }
+        { id: 2, name: 'Hola mundo!' },
       ]}
       columns={[]}
     />);

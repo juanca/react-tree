@@ -1,11 +1,8 @@
 import React from 'react';
+import columnPropType from './prop-type/column';
 
 class HeaderCell extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  
-  getStyles() {
+  static getStyles() {
     return {
       flexBasis: 0,
       flexGrow: 1,
@@ -16,16 +13,15 @@ class HeaderCell extends React.Component {
 
   render() {
     return (
-      <div className='react-tree-header-cell' style={this.getStyles()}>
+      <div className="react-tree-header-cell" style={this.constructor.getStyles()}>
         {this.props.column.label}
       </div>
     );
   }
-};
+}
 
 HeaderCell.propTypes = {
-  column: React.PropTypes.object,
-  collection: React.PropTypes.array,
+  column: columnPropType,
 };
 
 HeaderCell.defaultProps = {};

@@ -1,9 +1,12 @@
 import React from 'react';
-import BodyRow from './body-row'
+import BodyRow from './body-row';
+import collectionPropType from './prop-type/collection';
+import columnsPropType from './prop-type/columns';
 
 class Body extends React.Component {
   constructor(props) {
     super(props);
+    this.createBodyRow = this.createBodyRow.bind(this);
   }
 
   createBodyRow(model) {
@@ -16,16 +19,16 @@ class Body extends React.Component {
 
   render() {
     return (
-      <div className='react-tree-body'>
-        {this.props.collection.map(this.createBodyRow.bind(this))}
+      <div className="react-tree-body">
+        {this.props.collection.map(this.createBodyRow)}
       </div>
     );
   }
 }
 
 Body.propTypes = {
-  collection: React.PropTypes.array,
-  columns: React.PropTypes.array,
+  collection: collectionPropType,
+  columns: columnsPropType,
 };
 
 Body.defaultProps = {};

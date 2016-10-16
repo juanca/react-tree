@@ -1,12 +1,10 @@
 import React from 'react';
 import HeaderRow from './header-row';
 import Body from './body';
+import collectionPropType from './prop-type/collection';
+import columnsPropType from './prop-type/columns';
 
 class Grid extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   createHeaderRow() {
     return (
       <HeaderRow columns={this.props.columns} collection={this.props.collection} />
@@ -21,7 +19,7 @@ class Grid extends React.Component {
 
   render() {
     return (
-      <div className='react-tree-grid'>
+      <div className="react-tree-grid">
         {this.createHeaderRow()}
         {this.createBody()}
       </div>
@@ -30,13 +28,13 @@ class Grid extends React.Component {
 }
 
 Grid.propTypes = {
-  columns: React.PropTypes.array,
-  collection: React.PropTypes.array,
+  collection: collectionPropType,
+  columns: columnsPropType,
 };
 
 Grid.defaultProps = {
-  columns: [],
   collection: [],
+  columns: [],
 };
 
 export default Grid;

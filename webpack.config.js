@@ -1,10 +1,8 @@
-var webpack = require('webpack');
-
 module.exports = {
   entry: './react-tree-entry.js',
 
   externals: {
-    'react': 'React'
+    react: 'React',
   },
 
   module: {
@@ -12,12 +10,12 @@ module.exports = {
       test: /\.js$/,
       exclude: /(node_modules)/,
       loader: 'babel-loader',
-      query: { presets: ['es2015'] }
+      query: { presets: ['es2015'] },
     }, {
       test: /\.jsx$/,
       exclude: /(node_modules)/,
       loader: 'babel-loader',
-      query: { presets: ['es2015', 'react'] }
+      query: { presets: ['es2015', 'react'] },
     }],
   },
 
@@ -25,7 +23,7 @@ module.exports = {
     path: __dirname,
     filename: 'react-tree.js',
     libraryTarget: 'this',
-    library: 'ReactTree'
+    library: 'ReactTree',
   },
 
   resolve: {

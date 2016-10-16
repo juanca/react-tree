@@ -1,15 +1,9 @@
 import React from 'react';
+import columnPropType from './prop-type/column';
+import modelPropType from './prop-type/model';
 
 class BodyCell extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  getModelAttribute() {
-    return this.props.model[this.props.column.attribute];
-  }
-
-  getStyles() {
+  static getStyles() {
     return {
       flexBasis: 0,
       flexGrow: 1,
@@ -17,9 +11,13 @@ class BodyCell extends React.Component {
     };
   }
 
+  getModelAttribute() {
+    return this.props.model[this.props.column.attribute];
+  }
+
   render() {
     return (
-      <div className='react-tree-body-cell' style={this.getStyles()}>
+      <div className="react-tree-body-cell" style={this.constructor.getStyles()}>
         {this.getModelAttribute()}
       </div>
     );
@@ -27,8 +25,8 @@ class BodyCell extends React.Component {
 }
 
 BodyCell.propTypes = {
-  column: React.PropTypes.object,
-  model: React.PropTypes.object,
+  column: columnPropType,
+  model: modelPropType,
 };
 
 BodyCell.defaultProps = {};

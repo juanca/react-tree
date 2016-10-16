@@ -1,9 +1,11 @@
 import React from 'react';
 import BodyRowCells from './body-row-cells';
+import columnsPropType from './prop-type/columns';
+import modelPropType from './prop-type/model';
 
 class BodyRow extends React.Component {
-  constructor(props) {
-    super(props);
+  getBodyCollection() {
+    return this.props.model.collection || [];
   }
 
   createBodyRowCells() {
@@ -13,7 +15,7 @@ class BodyRow extends React.Component {
   }
 
   createBody() {
-    if (this.getBodyCollection().length == 0) return;
+    if (this.getBodyCollection().length === 0) return null;
 
     const Body = this.props.Body;
     const nestedCollection = this.getBodyCollection();
@@ -23,13 +25,9 @@ class BodyRow extends React.Component {
     );
   }
 
-  getBodyCollection() {
-    return this.props.model.collection || [];
-  }
-
   render() {
     return (
-      <div className='react-tree-body-row'>
+      <div className="react-tree-body-row">
         {this.createBodyRowCells()}
         {this.createBody()}
       </div>
@@ -38,8 +36,8 @@ class BodyRow extends React.Component {
 }
 
 BodyRow.propTypes = {
-  columns: React.PropTypes.array,
-  model: React.PropTypes.object,
+  columns: columnsPropType,
+  model: modelPropType,
 };
 
 BodyRow.defaultProps = {};

@@ -1,8 +1,17 @@
 import React from 'react';
+import collectionPropType from './prop-type/collection';
+import columnsPropType from './prop-type/columns';
 
 class HeaderRow extends React.Component {
+  static getStyles() {
+    return {
+      display: 'flex',
+    };
+  }
+
   constructor(props) {
     super(props);
+    this.createHeaderCell = this.createHeaderCell.bind(this);
   }
 
   createHeaderCell(column) {
@@ -14,24 +23,18 @@ class HeaderRow extends React.Component {
     );
   }
 
-  getStyles() {
-    return {
-      display: 'flex',
-    };
-  }
-
   render() {
     return (
-      <div className='react-tree-header-row' style={this.getStyles()}>
-        {this.props.columns.map(this.createHeaderCell.bind(this))}
+      <div className="react-tree-header-row" style={this.constructor.getStyles()}>
+        {this.props.columns.map(this.createHeaderCell)}
       </div>
     );
   }
 }
 
 HeaderRow.propTypes = {
-  columns: React.PropTypes.array,
-  collection: React.PropTypes.array,
+  collection: collectionPropType,
+  columns: columnsPropType,
 };
 
 HeaderRow.defaultProps = {};

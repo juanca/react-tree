@@ -34,7 +34,7 @@ describe('<BodyRow />', () => {
       const wrapper = shallow(<BodyRow
         model={{
           name: 'Hello world!',
-          collection: [{ name: 'Hola mundo!' }]
+          collection: [{ name: 'Hola mundo!' }],
         }}
         columns={[]}
         Body={Body}

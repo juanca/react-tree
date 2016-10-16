@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "webpack",
+    "lint": "eslint lib/* spec/* *.js",
     "start": "webpack-dev-server",
     "test": "npm run test:karma -- --single-run",
     "test:karma": "karma start",

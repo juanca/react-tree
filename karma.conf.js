@@ -1,8 +1,9 @@
 const webpackConfig = require('./webpack.config');
+
 Object.assign(webpackConfig, {
   entry: {},
   externals: {
-    'cheerio': 'window',
+    cheerio: 'window',
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true,
@@ -10,7 +11,7 @@ Object.assign(webpackConfig, {
   devTool: 'inline-source-map',
 });
 
-module.exports = function(config) {
+module.exports = function karmaConfig(config) {
   config.set({
     browsers: ['PhantomJS'],
 
@@ -39,7 +40,7 @@ module.exports = function(config) {
     webpack: webpackConfig,
 
     webpackMiddleware: {
-      stats: 'errors-only'
-    }
+      stats: 'errors-only',
+    },
   });
 };

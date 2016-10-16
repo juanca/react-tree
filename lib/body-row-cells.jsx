@@ -1,8 +1,17 @@
 import React from 'react';
+import columnsPropType from './prop-type/columns';
+import modelPropType from './prop-type/model';
 
 class BodyRowCells extends React.Component {
+  static getStyles() {
+    return {
+      display: 'flex',
+    };
+  }
+
   constructor(props) {
     super(props);
+    this.createBodyCell = this.createBodyCell.bind(this);
   }
 
   createBodyCell(column) {
@@ -14,24 +23,18 @@ class BodyRowCells extends React.Component {
     );
   }
 
-  getStyles() {
-    return {
-      display: 'flex',
-    };
-  }
-
   render() {
     return (
-      <div className='react-tree-body-row-cells' style={this.getStyles()}>
-        {this.props.columns.map(this.createBodyCell.bind(this))}
+      <div className="react-tree-body-row-cells" style={this.constructor.getStyles()}>
+        {this.props.columns.map(this.createBodyCell)}
       </div>
     );
   }
 }
 
 BodyRowCells.propTypes = {
-  columns: React.PropTypes.array,
-  model: React.PropTypes.object,
+  columns: columnsPropType,
+  model: modelPropType,
 };
 
 BodyRowCells.defaultProps = {};
