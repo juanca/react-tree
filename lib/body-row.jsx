@@ -38,7 +38,6 @@ class BodyRow extends React.Component {
 }
 
 BodyRow.propTypes = {
-  Body: React.PropTypes.element,
   columns: React.PropTypes.array,
   model: React.PropTypes.object,
 };
