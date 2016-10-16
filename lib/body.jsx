@@ -13,7 +13,7 @@ class Body extends React.Component {
     const key = model.key || model.id;
 
     return (
-      <BodyRow key={key} Body={Body} columns={this.props.columns} model={model} />
+      <BodyRow key={key} columns={this.props.columns} model={model} />
     );
   }
 

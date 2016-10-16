@@ -23,7 +23,6 @@ describe('<BodyRow />', () => {
       const wrapper = shallow(<BodyRow
         model={{ name: 'Hello world!' }}
         columns={[]}
-        Body={Body}
       />);
       expect(wrapper.find(Body)).toBeEmpty();
     });
@@ -37,7 +36,6 @@ describe('<BodyRow />', () => {
           collection: [{ name: 'Hola mundo!' }],
         }}
         columns={[]}
-        Body={Body}
       />);
       expect(wrapper.find(Body)).not.toBeEmpty();
     });

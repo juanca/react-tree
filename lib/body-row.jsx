@@ -1,5 +1,6 @@
 import React from 'react';
 import BodyRowCells from './body-row-cells';
+import Body from './body';
 import columnsPropType from './prop-type/columns';
 import modelPropType from './prop-type/model';
 
@@ -17,7 +18,6 @@ class BodyRow extends React.Component {
   createBody() {
     if (this.getBodyCollection().length === 0) return null;
 
-    const Body = this.props.Body;
     const nestedCollection = this.getBodyCollection();
 
     return (
