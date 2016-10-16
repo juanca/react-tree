@@ -21,7 +21,7 @@ class Grid extends React.Component {
 
   render() {
     return (
-      <div class='react-tree-grid'>
+      <div className='react-tree-grid'>
         {this.createHeaderRow()}
         {this.createBody()}
       </div>

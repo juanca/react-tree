@@ -19,7 +19,7 @@ class BodyCell extends React.Component {
 
   render() {
     return (
-      <div class='react-tree-body-cell' style={this.getStyles()}>
+      <div className='react-tree-body-cell' style={this.getStyles()}>
         {this.getModelAttribute()}
       </div>
     );

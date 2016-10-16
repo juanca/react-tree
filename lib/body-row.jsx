@@ -29,7 +29,7 @@ class BodyRow extends React.Component {
 
   render() {
     return (
-      <div class='react-tree-body-row'>
+      <div className='react-tree-body-row'>
         {this.createBodyRowCells()}
         {this.createBody()}
       </div>

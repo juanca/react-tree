@@ -14,7 +14,7 @@ class Body extends React.Component {
 
   render() {
     return (
-      <div class='react-tree-body'>
+      <div className='react-tree-body'>
         {this.props.collection.map(this.createBodyRow.bind(this))}
       </div>
     );

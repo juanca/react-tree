@@ -21,7 +21,7 @@ class HeaderRow extends React.Component {
 
   render() {
     return (
-      <div class='react-tree-header-row' style={this.getStyles()}>
+      <div className='react-tree-header-row' style={this.getStyles()}>
         {this.props.columns.map(this.createHeaderCell.bind(this))}
       </div>
     );
