@@ -21,7 +21,7 @@ describe('<BodyRowCells />', () => {
     const wrapper = shallow(<BodyRowCells
       model={{}}
       columns={[
-        { cell: BodyCell },
+        { key: 'a-cell', cell: BodyCell },
       ]}
     />);
     expect(wrapper.find(BodyCell).length).toBe(1);
@@ -31,9 +31,9 @@ describe('<BodyRowCells />', () => {
     const wrapper = shallow(<BodyRowCells
       model={{}}
       columns={[
-        { cell: BodyCell },
-        { cell: BodyCell },
-        { cell: BodyCell },
+        { key: 'a', cell: BodyCell },
+        { key: 'b', cell: BodyCell },
+        { key: 'c', cell: BodyCell },
       ]}
     />);
     expect(wrapper.find(BodyCell).length).toBe(3);

@@ -7,9 +7,10 @@ class BodyRowCells extends React.Component {
 
   createBodyCell(column) {
     const Cell = column.cell;
+    const key = column.key || column.attribute;
 
     return (
-      <Cell column={column} model={this.props.model} />
+      <Cell key={key} column={column} model={this.props.model} />
     );
   }
 

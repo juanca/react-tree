@@ -7,9 +7,10 @@ class HeaderRow extends React.Component {
 
   createHeaderCell(column) {
     const HeaderCell = column.headerCell;
+    const key = column.key || column.attribute;
 
     return (
-      <HeaderCell column={column} collection={this.props.collection} />
+      <HeaderCell key={key} column={column} collection={this.props.collection} />
     );
   }
 

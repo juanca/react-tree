@@ -7,8 +7,10 @@ class Body extends React.Component {
   }
 
   createBodyRow(model) {
+    const key = model.key || model.id;
+
     return (
-      <BodyRow Body={Body} columns={this.props.columns} model={model} />
+      <BodyRow key={key} Body={Body} columns={this.props.columns} model={model} />
     );
   }
 
