@@ -16,6 +16,7 @@ module.exports = function karmaConfig(config) {
     browsers: ['PhantomJS'],
 
     files: [
+      'spec/list/simple.jsx',
       'spec/body-cell.jsx',
       'spec/body-row-cells.jsx',
       'spec/body-row.jsx',
@@ -28,6 +29,7 @@ module.exports = function karmaConfig(config) {
     frameworks: ['jasmine'],
 
     preprocessors: {
+      'spec/list/simple.jsx': ['webpack'],
       'spec/body-cell.jsx': ['webpack'],
       'spec/body-row-cells.jsx': ['webpack'],
       'spec/body-row.jsx': ['webpack'],
