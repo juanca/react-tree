@@ -16,6 +16,7 @@ module.exports = function karmaConfig(config) {
     browsers: ['PhantomJS'],
 
     files: [
+      'spec/list/recursive.jsx',
       'spec/list/simple.jsx',
       'spec/body-cell.jsx',
       'spec/body-row-cells.jsx',
@@ -29,6 +30,7 @@ module.exports = function karmaConfig(config) {
     frameworks: ['jasmine'],
 
     preprocessors: {
+      'spec/list/recursive.jsx': ['webpack'],
       'spec/list/simple.jsx': ['webpack'],
       'spec/body-cell.jsx': ['webpack'],
       'spec/body-row-cells.jsx': ['webpack'],
