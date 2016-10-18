@@ -4,6 +4,8 @@ Semantic grid view for tree structures.
 Inspired by [Backgrid](https://github.com/wyuenho/backgrid)
 and [Marionette Tree](https://github.com/juanca/marionette-tree).
 
+[![Travis](https://img.shields.io/travis/juanca/react-tree.svg)](travis-ci.org/juanca/react-tree)
+
 ## Getting started
 
     git clone git@github.com:juanca/react-tree.git
