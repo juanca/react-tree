@@ -6,8 +6,12 @@ import columnsPropType from './prop-type/columns';
 
 class Grid extends React.Component {
   createHeaderRow() {
+    const columns = Array.isArray(this.props.columns[0]) ?
+      this.props.columns[0] :
+      this.props.columns;
+
     return (
-      <HeaderRow columns={this.props.columns} collection={this.props.collection} />
+      <HeaderRow columns={columns} collection={this.props.collection} />
     );
   }
 
@@ -29,7 +33,10 @@ class Grid extends React.Component {
 
 Grid.propTypes = {
   collection: collectionPropType,
-  columns: columnsPropType,
+  columns: React.PropTypes.oneOfType([
+    columnsPropType,
+    React.PropTypes.arrayOf(columnsPropType),
+  ]),
 };
 
 Grid.defaultProps = {

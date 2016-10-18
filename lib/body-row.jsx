@@ -5,13 +5,21 @@ import columnsPropType from './prop-type/columns';
 import modelPropType from './prop-type/model';
 
 class BodyRow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.hasManyColumnSets = Array.isArray(this.props.columns[0]);
+  }
   getBodyCollection() {
     return this.props.model.collection || [];
   }
 
   createBodyRowCells() {
+    const columns = this.hasManyColumnSets ?
+      this.props.columns[0] :
+      this.props.columns;
+
     return (
-      <BodyRowCells columns={this.props.columns} model={this.props.model} />
+      <BodyRowCells columns={columns} model={this.props.model} />
     );
   }
 
@@ -19,9 +27,12 @@ class BodyRow extends React.Component {
     if (this.getBodyCollection().length === 0) return null;
 
     const nestedCollection = this.getBodyCollection();
+    const columns = this.hasManyColumnSets ?
+      this.props.columns.slice(1) :
+      this.props.columns;
 
     return (
-      <Body collection={nestedCollection} columns={this.props.columns} />
+      <Body collection={nestedCollection} columns={columns} />
     );
   }
 

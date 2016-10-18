@@ -16,6 +16,7 @@ module.exports = function karmaConfig(config) {
     browsers: ['PhantomJS'],
 
     files: [
+      'spec/list/nested.jsx',
       'spec/list/recursive.jsx',
       'spec/list/simple.jsx',
       'spec/body-cell.jsx',
@@ -30,6 +31,7 @@ module.exports = function karmaConfig(config) {
     frameworks: ['jasmine'],
 
     preprocessors: {
+      'spec/list/nested.jsx': ['webpack'],
       'spec/list/recursive.jsx': ['webpack'],
       'spec/list/simple.jsx': ['webpack'],
       'spec/body-cell.jsx': ['webpack'],
