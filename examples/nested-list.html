@@ -24,8 +24,10 @@
       attribute: 'full_name',
       cell: ReactTree.BodyCell,
     }, {
-      label: 'Tasks',
       attribute: 'task_count',
+      cell: ReactTree.BodyCell,
+    }, {
+      attribute: 'tasks_completed',
       cell: ReactTree.BodyCell,
     }];
 
@@ -33,19 +35,37 @@
       id: 1,
       title: 'Drink Coffee',
       task_count: 42,
+      collection: [{
+        full_name: 'Nujip',
+        task_count: 2,
+        tasks_completed: 0,
+      }, {
+        full_name: 'Pijun',
+        task_count: 51,
+        tasks_completed: 13,
+      }],
     }, {
       id: 0,
       title: 'Sleep',
       task_count: 1337,
+      collection: [],
     }, {
       id: 3,
       title: 'Overwatch',
       task_count: 76,
+      collection: [{
+        full_name: 'Pijun',
+        task_count: 21,
+        tasks_completed: 21,
+      }],
     }];
 
     ReactDOM.render(React.createElement(ReactTree.Grid, {
       collection: projects,
-      columns: projectColumns
+      columns: [
+        projectColumns,
+        userColumns,
+      ]
     }), document.getElementById('example'));
   </script>
 </body>
