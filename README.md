@@ -13,9 +13,11 @@ and [Marionette Tree](https://github.com/juanca/marionette-tree).
 
     npm run compile
 
-### Developing locally
+### Developing locally / Viewing the examples
 
     npm start
+
+Go to [http://localhost:8080/examples/](http://localhost:8080/examples/).
 
 ### Testing locally
 
