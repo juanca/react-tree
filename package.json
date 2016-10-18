@@ -4,10 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "ci:lint": "npm run lint",
+    "ci:test": "npm run test:karma -- --single-run",
     "compile": "webpack",
     "lint": "eslint lib/* 'spec/**/*' *.js",
     "start": "webpack-dev-server",
-    "test": "npm run test:karma -- --single-run",
+    "test": "npm run ci:lint && npm run ci:test",
     "test:karma": "karma start",
     "test:watch": "npm run test:karma"
   },
