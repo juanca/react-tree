@@ -4,6 +4,83 @@
   <script type='text/javascript' src='../node_modules/react/dist/react.js'></script>
   <script type='text/javascript' src='../node_modules/react-dom/dist/react-dom.js'></script>
   <script type='text/javascript' src='../react-tree.js'></script>
+
+  <style>
+  body { background: #666; }
+  .react-tree-grid {
+
+  }
+
+  .react-tree-header-row {
+    /*.tbl-new thead:not(.tbl-new-basic)*/
+    background: #fbfaf6;
+    position: static;
+    border-top: 1px solid #e1e1dd;
+
+    /*.tbl-row-headers*/
+    border-bottom: 1px solid #e1e1dd;
+  }
+
+  .react-tree-header-cell {
+    /*[scope="col"]*/
+    border-right: 1px solid #e1e1dd;
+    text-transform: uppercase;
+    line-height: 1.8;
+    color: #4a4a4a;
+    padding: 0 8px;
+    font-size: 10px;
+    font-size: 0.625rem;
+
+    /*.tbl-new thead:not(.tbl-new-basic) tr:not(.tbl-new-basic)*/
+    height: 32px;
+  }
+
+  .react-tree-header-cell:last-child {
+    border-right: none;
+  }
+
+  .react-tree-grid > .react-tree-body {
+    /*.tbl-new-gutter tbody tr:not(.tbl-new-basic):first-child*/
+    border-top: 10px solid #f5f5f2;
+
+    /*.tbl-new-gutter tbody tr:not(.tbl-new-basic)*/
+    border-left: 10px solid #f5f5f2;
+    border-right: 10px solid #f5f5f2;
+
+    /*.tbl-new-gutter tbody tr:not(.tbl-new-basic):last-child*/
+    border-bottom: 10px solid #f5f5f2;
+  }
+
+  .react-tree-body {
+
+  }
+
+  .react-tree-body-row {
+
+  }
+
+  /*.react-tree-body-row .react-tree-body-cell {
+    padding-left: 10px;
+  }*/
+
+  .react-tree-body-row-cells {
+    /*.tbl-new tbody tr:not(.tbl-new-basic)*/
+    height: 46px;
+    background-color: #fff;
+
+    /*???*/
+    border-bottom: 1px solid #e1e1dd;
+  }
+
+  .react-tree-body-cell {
+    line-height: 18px;
+    padding: 5px 10px 5px 10px;
+    vertical-align: middle;
+    position: relative;
+    background-clip: padding-box;
+    border: 1px solid red;
+  }
+  </style>
 </head>
 <body>
   <div id='example'></div>
